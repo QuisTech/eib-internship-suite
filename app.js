@@ -126,9 +126,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. PRINT / SAVE AS PDF
+  // 3. PRINT / SAVE AS PDF (Ensures clean paper output without any editing lines or boxes)
+  function prepareCleanPrint() {
+    if (document.activeElement && document.activeElement.blur) {
+      document.activeElement.blur();
+    }
+    const sel = window.getSelection();
+    if (sel) sel.removeAllRanges();
+    document.body.classList.remove('highlight-editable');
+  }
+
   printBtn.addEventListener('click', () => {
+    prepareCleanPrint();
     window.print();
+  });
+
+  window.addEventListener('beforeprint', () => {
+    prepareCleanPrint();
+  });
+
+  window.addEventListener('afterprint', () => {
+    if (toggleHighlightBoxes && toggleHighlightBoxes.checked) {
+      document.body.classList.add('highlight-editable');
+    }
   });
 
   // 4. DOWNLOAD WORD DOCUMENT (.docx)
@@ -155,21 +175,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isInternalSync) return;
     isInternalSync = true;
 
-    const name = studentNameInput.value.trim() || '[Student Name]';
-    const matric = matricNoInput.value.trim() || '[Matric No]';
+    const name = studentNameInput.value.trim() || 'ADEMUWAGUN OLUWATIMILEHIN SAMUEL';
+    const matric = matricNoInput.value.trim() || '23CJ03334';
     const level = levelInput.value;
-    const inst = institutionInput.value.trim() || '[Institution Name]';
-    const faculty = facultyInput.value.trim() || '[Faculty]';
-    const dept = departmentInput.value.trim() || '[Department]';
-    const duration = durationInput.value.trim() || 'six (6) months (24 weeks)';
-    const ref = refNoInput.value.trim() || 'EIB/HR/SIWES/2026/042';
-    const start = startDateInput.value.trim() || '14th April, 2026';
-    const end = endDateInput.value.trim() || '9th October, 2026';
-    const unit = unitInput.value.trim() || 'Operations & Technical Services Division';
-    const hrName = hrNameInput.value.trim() || 'Marquis';
-    const hrTitle = hrTitleInput.value.trim() || 'Head of Human Resources & Talent Development';
+    const inst = institutionInput.value.trim() || 'Covenant University';
+    const faculty = facultyInput.value.trim() || 'EIE COMPUTER ENGINEERING';
+    const dept = departmentInput.value.trim() || 'Computer Engineering';
+    const duration = durationInput.value.trim() || '10 weeks';
+    const ref = refNoInput.value.trim() || 'EIB/HR/2026/042';
+    const start = startDateInput.value.trim() || '27th July, 2026';
+    const end = endDateInput.value.trim() || '2nd October, 2026';
+    const unit = unitInput.value.trim() || 'Research and Analysis Wing';
+    const hrName = hrNameInput.value.trim() || 'Michael Marquis';
+    const hrTitle = hrTitleInput.value.trim() || 'Group Head, Training & HRM (DICO)';
 
-    const firstName = name.split(' ')[0] || name;
+    const firstName = name.includes('ADEMUWAGUN') ? 'ADEMUWAGUN' : (name.split(' ')[0] || name);
 
     const updateGroup = (selector, val) => {
       document.querySelectorAll(selector).forEach(el => {
@@ -492,6 +512,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 11. PRESETS
   const presets = {
+    samuel: {
+      name: 'ADEMUWAGUN OLUWATIMILEHIN SAMUEL',
+      matric: '23CJ03334',
+      level: '400 Level (Undergraduate)',
+      inst: 'Covenant University',
+      faculty: 'EIE COMPUTER ENGINEERING',
+      dept: 'Computer Engineering',
+      duration: '10 weeks',
+      months: 2.5,
+      weeks: 10,
+      start: '27th July, 2026',
+      end: '2nd October, 2026',
+      unit: 'Research and Analysis Wing',
+      ref: 'EIB/HR/2026/042',
+      hrName: 'Michael Marquis',
+      hrTitle: 'Group Head, Training & HRM (DICO)',
+      scores: [10, 9, 9, 9, 10, 10, 9]
+    },
     tech: {
       name: 'Oluwaseun Emmanuel Adeyemi',
       matric: '190407028',
@@ -506,6 +544,8 @@ document.addEventListener('DOMContentLoaded', () => {
       end: '9th October, 2026',
       unit: 'Operations & Technical Services Division',
       ref: 'EIB/HR/SIWES/2026/042',
+      hrName: 'Marquis',
+      hrTitle: 'Head of Human Resources & Talent Development',
       scores: [10, 9, 9, 9, 10, 10, 9]
     },
     eng: {
@@ -522,23 +562,9 @@ document.addEventListener('DOMContentLoaded', () => {
       end: '30th October, 2026',
       unit: 'Field Systems & Telecommunications Unit',
       ref: 'EIB/HR/SIWES/2026/058',
+      hrName: 'Marquis',
+      hrTitle: 'Head of Human Resources & Talent Development',
       scores: [10, 10, 9, 9, 10, 10, 10]
-    },
-    bus: {
-      name: 'Amina Fatima Bello',
-      matric: 'CU/2021/BUS/0942',
-      level: '300 Level (Undergraduate)',
-      inst: 'Covenant University, Ota',
-      faculty: 'College of Management & Social Sciences',
-      dept: 'Business Administration & Logistics',
-      duration: 'three (3) months (12 weeks)',
-      months: 3,
-      weeks: 12,
-      start: '1st June, 2026',
-      end: '28th August, 2026',
-      unit: 'Corporate Strategy & Logistics Coordination',
-      ref: 'EIB/HR/IT/2026/019',
-      scores: [10, 9, 10, 9, 10, 10, 9]
     }
   };
 
@@ -562,6 +588,9 @@ document.addEventListener('DOMContentLoaded', () => {
       endDateInput.value = p.end;
       unitInput.value = p.unit;
       refNoInput.value = p.ref;
+
+      if (p.hrName) hrNameInput.value = p.hrName;
+      if (p.hrTitle) hrTitleInput.value = p.hrTitle;
 
       p.scores.forEach((s, idx) => {
         if (scoreInputs[idx]) scoreInputs[idx].value = s;

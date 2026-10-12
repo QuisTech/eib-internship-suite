@@ -646,33 +646,33 @@ input:focus, select:focus {
   min-height: 1.1em;
 }
 
-/* When highlighted boxes mode is enabled (default) */
+/* When highlighted boxes mode is enabled */
 body.highlight-editable [contenteditable="true"] {
-  outline: 1px dashed rgba(37, 102, 168, 0.35) !important;
+  outline: 1px dashed rgba(37, 102, 168, 0.35);
   outline-offset: 2px;
   background-color: rgba(37, 102, 168, 0.02);
 }
 
 /* Hovering over any editable text gives an obvious soft blue cue */
 [contenteditable="true"]:hover {
-  outline: 1.5px dashed #2566a8 !important;
+  outline: 1.5px dashed #2566a8;
   outline-offset: 2px;
-  background-color: rgba(37, 102, 168, 0.06) !important;
+  background-color: rgba(37, 102, 168, 0.05);
 }
 
 /* Active editing focus */
 [contenteditable="true"]:focus {
-  outline: 2px solid #1b4d89 !important;
+  outline: 2px solid #1b4d89;
   outline-offset: 2px;
-  background-color: rgba(37, 102, 168, 0.08) !important;
-  box-shadow: 0 0 0 3px rgba(37, 102, 168, 0.18) !important;
+  background-color: rgba(37, 102, 168, 0.08);
+  box-shadow: 0 0 0 3px rgba(37, 102, 168, 0.18);
 }
 
 /* Floating quick indicator when editing */
 .active-editing-field {
-  outline: 2px solid #2566a8 !important;
+  outline: 2px solid #2566a8;
   outline-offset: 2px;
-  background-color: rgba(37, 102, 168, 0.08) !important;
+  background-color: rgba(37, 102, 168, 0.08);
 }
 
 /* ---------------------------------------------------
@@ -1441,11 +1441,39 @@ body.highlight-editable [contenteditable="true"] {
     padding: 14mm 16mm !important;
   }
 
-  [contenteditable="true"] {
+  /* COMPLETE STRIPPING OF ALL EDITABLE OUTLINES, BORDERS, AND BOXES IN PRINT */
+  *, *::before, *::after,
+  body, body.highlight-editable,
+  body.highlight-editable *,
+  body.highlight-editable [contenteditable="true"],
+  [contenteditable="true"],
+  [contenteditable],
+  .editable-zone,
+  .active-editing-field {
     outline: none !important;
-    background: transparent !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
     box-shadow: none !important;
+    text-shadow: none !important;
   }
+
+  body.highlight-editable [contenteditable="true"],
+  [contenteditable="true"],
+  [contenteditable] {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  /* Preserve essential document structure borders */
+  .grid-table td { border: 1px solid #cbd5e1 !important; }
+  .matrix-table td { border: 1px solid #cbd5e1 !important; }
+  .matrix-table th { border: 1px solid #1b4d89 !important; background: #1b4d89 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .qualitative-box { border: 1px solid #cbd5e1 !important; }
+  .quantitative-box { border: 1.5px solid #1b4d89 !important; }
+  .form-auth-row { border: 1px solid #cbd5e1 !important; }
+  .cert-border-outer { border: 5px solid #1b4d89 !important; }
+  .cert-border-inner { border: 2px solid #c69214 !important; }
+  .lh-rule { background: #1b4d89 !important; -webkit-print-color-adjust: exact !important; }
 
   .a4-sheet:not(.active) {
     display: none !important;

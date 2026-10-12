@@ -64,15 +64,11 @@ def create_completion_letter(output_path, assets_dir):
     r_name.font.size = Pt(12)
     r_name.font.color.rgb = RGBColor(27, 77, 137)
     
-    r_sub = p_info.add_run("Member of EIB Group • RC: 1849204\n")
-    r_sub.font.size = Pt(8.5)
-    r_sub.font.color.rgb = RGBColor(100, 110, 125)
-    
-    r_addr = p_info.add_run("Plot 12, Commercial Block, Victoria Island, Lagos, Nigeria\n"
-                           "Tel: +234 (0) 803 000 0000 | +234 (0) 1 290 0000\n"
-                           "Email: hr@eibstratoc.com | info@eibgroup.ng\n"
+    r_addr = p_info.add_run("EIB & SAC FACILITY, OFF UNIGAZ, Idu Industrial Area\n"
+                           "Abuja, Nigeria\n"
+                           "Tel: +234 (0) 900 000 0000\n"
                            "Website: www.eibstratoc.com")
-    r_addr.font.size = Pt(8)
+    r_addr.font.size = Pt(8.5)
     r_addr.font.color.rgb = RGBColor(110, 120, 135)
     
     # Decorative rule line under letterhead
@@ -86,7 +82,7 @@ def create_completion_letter(output_path, assets_dir):
     # Date & Ref
     p_meta = doc.add_paragraph()
     p_meta.paragraph_format.space_after = Pt(12)
-    r_ref = p_meta.add_run("REF: EIB/HR/SIWES/2026/042\t\t\t\t\t")
+    r_ref = p_meta.add_run("REF: EIB/HR/2026/042\t\t\t\t\t")
     r_ref.bold = True
     r_ref.font.size = Pt(9.5)
     r_ref.font.color.rgb = RGBColor(60, 70, 85)
@@ -100,11 +96,10 @@ def create_completion_letter(output_path, assets_dir):
     p_addr = doc.add_paragraph()
     p_addr.paragraph_format.space_after = Pt(12)
     p_addr.paragraph_format.line_spacing = 1.15
-    r_to = p_addr.add_run("The Coordinator,\n"
-                          "Students Industrial Work Experience Scheme (SIWES) Unit,\n"
-                          "Directorate of Academic Planning & Industrial Training,\n"
-                          "[Name of Tertiary Institution / University / Polytechnic],\n"
-                          "[City, State, Nigeria].")
+    r_to = p_addr.add_run("The Industrial Training Coordinator,\n"
+                          "Department of EIE COMPUTER ENGINEERING,\n"
+                          "Covenant University,\n"
+                          "Ota, Ogun State, Nigeria.")
     r_to.font.size = Pt(10)
     r_to.font.color.rgb = RGBColor(30, 40, 55)
     
@@ -119,8 +114,8 @@ def create_completion_letter(output_path, assets_dir):
     p_title = doc.add_paragraph()
     p_title.paragraph_format.space_before = Pt(4)
     p_title.paragraph_format.space_after = Pt(12)
-    r_title = p_title.add_run("LETTER OF COMPLETION OF INDUSTRIAL TRAINING ATTACHMENT\n"
-                             "RE: [STUDENT'S FULL NAME] | MATRIC NO: [MATRICULATION NUMBER]")
+    r_title = p_title.add_run("LETTER OF COMPLETION OF INTERNSHIP\n"
+                             "RE: ADEMUWAGUN OLUWATIMILEHIN SAMUEL | MATRIC NO: 23CJ03334")
     r_title.bold = True
     r_title.font.size = Pt(11)
     r_title.font.color.rgb = RGBColor(27, 77, 137)
@@ -132,35 +127,40 @@ def create_completion_letter(output_path, assets_dir):
     p1.add_run(
         "This is to formally certify that "
     )
-    r_sname = p1.add_run("[STUDENT'S FULL NAME]")
+    r_sname = p1.add_run("ADEMUWAGUN OLUWATIMILEHIN SAMUEL")
     r_sname.bold = True
     p1.add_run(
         ", a student of the Department of "
     )
-    r_dept = p1.add_run("[Department / Discipline, e.g. Computer Science / Electrical Engineering]")
+    r_dept = p1.add_run("Computer Engineering")
     r_dept.bold = True
+    p1.add_run(
+        ", EIE COMPUTER ENGINEERING, "
+    )
+    r_inst = p1.add_run("Covenant University")
+    r_inst.bold = True
     p1.add_run(
         ", with Matriculation Number "
     )
-    r_mat = p1.add_run("[MATRICULATION NUMBER]")
+    r_mat = p1.add_run("23CJ03334")
     r_mat.bold = True
     p1.add_run(
         ", has successfully completed his mandatory "
     )
-    r_dur = p1.add_run("six (6) months (24 weeks)")
+    r_dur = p1.add_run("10 weeks")
     r_dur.bold = True
     p1.add_run(
-        " Students Industrial Work Experience Scheme (SIWES) attachment with "
+        " internship attachment with "
     )
     r_cname = p1.add_run("EIB STRATOC LIMITED")
     r_cname.bold = True
     p1.add_run(
         ", commencing from "
     )
-    r_sd = p1.add_run("14th April, 2026")
+    r_sd = p1.add_run("27th July, 2026")
     r_sd.bold = True
     p1.add_run(" to ")
-    r_ed = p1.add_run("9th October, 2026")
+    r_ed = p1.add_run("2nd October, 2026")
     r_ed.bold = True
     p1.add_run(".")
     
@@ -169,12 +169,12 @@ def create_completion_letter(output_path, assets_dir):
     p2.paragraph_format.space_after = Pt(8)
     p2.paragraph_format.line_spacing = 1.15
     p2.add_run(
-        "During his period of attachment, he was assigned to our "
+        "During his attachment period, he was deployed to our "
     )
-    r_unit = p2.add_run("Operations & Technical Services Division")
+    r_unit = p2.add_run("Research and Analysis Wing")
     r_unit.bold = True
     p2.add_run(
-        ", where he was exposed to real-world corporate workflows, project execution, quality assurance, system diagnostics, and collaborative technical problem-solving. He demonstrated a keen eagerness to learn, readily grasped complex operational methodologies, and contributed productively to departmental goals."
+        ". Throughout this tenure, he was thoroughly engaged in hands-on industry workflows, software systems operations, troubleshooting, network diagnostic evaluations, and collaborative client support. He exhibited an exemplary aptitude for rapidly absorbing complex operational guidelines and translating technical theory into high-impact practical solutions."
     )
     
     # Paragraph 3: Character & Appraisal
@@ -182,7 +182,7 @@ def create_completion_letter(output_path, assets_dir):
     p3.paragraph_format.space_after = Pt(8)
     p3.paragraph_format.line_spacing = 1.15
     p3.add_run(
-        "Throughout the training duration, [Student Name] maintained an exemplary standard of discipline, punctuality, integrity, and professional decorum. He consistently demonstrated high moral character, diligence, team spirit, and strict compliance with our corporate health, safety, and operational regulations."
+        "Throughout his stay at EIB Stratoc Limited, ADEMUWAGUN conducted himself with the highest degree of professionalism, diligence, integrity, and discipline. He was consistently punctual, embraced workplace responsibilities proactively, harmonized well with team colleagues and senior staff, and complied strictly with all corporate and occupational safety standards."
     )
     
     # Paragraph 4: Clearance
@@ -190,7 +190,7 @@ def create_completion_letter(output_path, assets_dir):
     p4.paragraph_format.space_after = Pt(16)
     p4.paragraph_format.line_spacing = 1.15
     p4.add_run(
-        "He has surrendered all company properties in his possession and is hereby fully cleared of all organizational obligations. We commend his outstanding conduct and strongly recommend him for academic grading, certification, and future career engagements. We wish him continued success in his academic pursuits."
+        "Having met and satisfied all required departmental deliverables and performance standards, he has been officially cleared of all organizational obligations. We hereby commend his exceptional performance and unreservedly recommend him for academic assessment, logbook defense, and future professional pursuits."
     )
     
     # Sign-off & Stamp Table
@@ -220,14 +220,14 @@ def create_completion_letter(output_path, assets_dir):
     
     p_sig_text = sig_cell.add_paragraph()
     p_sig_text.paragraph_format.line_spacing = 1.15
-    r_mname = p_sig_text.add_run("Marquis\n")
+    r_mname = p_sig_text.add_run("Michael Marquis\n")
     r_mname.bold = True
     r_mname.font.size = Pt(10.5)
     r_mname.font.color.rgb = RGBColor(27, 77, 137)
     
-    r_mtitle = p_sig_text.add_run("Human Resources & Talent Management\n"
+    r_mtitle = p_sig_text.add_run("Group Head, Training & HRM (DICO)\n"
                                  "EIB Stratoc Limited (EIB Group)\n"
-                                 "Email: hr@eibstratoc.com")
+                                 "Email: hmichael.marquis@eibgroup.com")
     r_mtitle.font.size = Pt(9)
     r_mtitle.font.color.rgb = RGBColor(90, 100, 115)
     
@@ -278,7 +278,7 @@ def create_evaluation_form(output_path, assets_dir):
     r1.font.size = Pt(13)
     r1.font.color.rgb = RGBColor(27, 77, 137)
     
-    r2 = p_title.add_run("STUDENT INDUSTRIAL WORK EXPERIENCE SCHEME (SIWES)\n"
+    r2 = p_title.add_run("INTERNSHIP\n"
                          "END-OF-ATTACHMENT EMPLOYER'S EVALUATION & CLEARANCE REPORT\n")
     r2.bold = True
     r2.font.size = Pt(9.5)
@@ -314,10 +314,10 @@ def create_evaluation_form(output_path, assets_dir):
             row.cells[idx].width = w
             
     info_data = [
-        [("Student Full Name:", True), ("[Student Name]", False), ("Matriculation No:", True), ("[Matric No]", False)],
-        [("Institution:", True), ("[University / Polytechnic]", False), ("Faculty / School:", True), ("[Faculty of Science/Eng.]", False)],
-        [("Department / Course:", True), ("[e.g. Computer Science]", False), ("Level / Year of Study:", True), ("400 Level (Undergraduate)", False)],
-        [("Attachment Period:", True), ("14-Apr-2026 to 09-Oct-2026 (24 Weeks)", False), ("Assigned Division:", True), ("Operations & Technology", False)],
+        [("Student Full Name:", True), ("ADEMUWAGUN OLUWATIMILEHIN SAMUEL", False), ("Matriculation No:", True), ("23CJ03334", False)],
+        [("Institution:", True), ("Covenant University", False), ("Faculty / School:", True), ("EIE COMPUTER ENGINEERING", False)],
+        [("Department / Course:", True), ("Computer Engineering", False), ("Level / Year of Study:", True), ("400 Level (Undergraduate)", False)],
+        [("Attachment Period:", True), ("27-Jul-2026 to 02-Oct-2026 (10 Weeks)", False), ("Assigned Division:", True), ("Research and Analysis Wing", False)],
     ]
     
     for r_idx, row in enumerate(info_data):
@@ -339,7 +339,7 @@ def create_evaluation_form(output_path, assets_dir):
     p_s2 = doc.add_paragraph()
     p_s2.paragraph_format.space_before = Pt(8)
     p_s2.paragraph_format.space_after = Pt(4)
-    r_s2 = p_s2.add_run("SECTION B: PERFORMANCE APPRAISAL MATRIX (RATING: 1 - 5)")
+    r_s2 = p_s2.add_run("SECTION B: PERFORMANCE APPRAISAL MATRIX (GRADED ON 10-POINT SCALE)")
     r_s2.bold = True
     r_s2.font.size = Pt(10)
     r_s2.font.color.rgb = RGBColor(27, 77, 137)
@@ -367,13 +367,13 @@ def create_evaluation_form(output_path, assets_dir):
         r.font.color.rgb = RGBColor(255, 255, 255)
         
     criteria = [
-        ("1", "Punctuality, Regularity & Attendance Record", "10 / 10", "Excellent", "Always on time"),
-        ("2", "Technical Competence & Application of Knowledge", "9 / 10", "Very Good", "Quick learner"),
-        ("3", "Quality of Work, Accuracy & Attention to Detail", "9 / 10", "Very Good", "Thorough & neat"),
-        ("4", "Initiative, Problem Solving & Creativity", "9 / 10", "Very Good", "Proactive attitude"),
-        ("5", "Interpersonal Relationships & Team Collaboration", "10 / 10", "Excellent", "Harmonious team player"),
-        ("6", "Compliance with Company Rules & Safety Standards", "10 / 10", "Excellent", "Zero infraction"),
-        ("7", "Logbook Documentation & Report Presentation", "9 / 10", "Very Good", "Well structured"),
+        ("1", "Punctuality, Regularity & Attendance Record", "10 / 10", "Excellent", "Always on time; zero absences"),
+        ("2", "Technical Competence & Application of Knowledge", "9 / 10", "Very Good", "Very Good competence"),
+        ("3", "Quality of Work, Accuracy & Attention to Detail", "9 / 10", "Very Good", "Very Good accuracy"),
+        ("4", "Initiative, Problem Solving & Creativity", "9 / 10", "Very Good", "Very proactive"),
+        ("5", "Interpersonal Relationships & Team Collaboration", "10 / 10", "Excellent", "Inspiring team leader & peer"),
+        ("6", "Compliance with Company Rules & Safety Standards", "10 / 10", "Excellent", "Exemplary conduct; zero infractions"),
+        ("7", "Logbook Documentation & Report Presentation", "9 / 10", "Very Good", "Very thorough record"),
     ]
     
     for r_idx, row_vals in enumerate(criteria, start=1):
@@ -413,7 +413,7 @@ def create_evaluation_form(output_path, assets_dir):
     r_rem_label.font.size = Pt(8.5)
     r_rem_label.font.color.rgb = RGBColor(27, 77, 137)
     r_rem_text = p_rem.add_run(
-        "The trainee showed remarkable dedication, technical curiosity, and professionalism throughout the 6-month internship attachment. He completed all assigned tasks on schedule, worked well with the operations crew, and demonstrated strong leadership potential. Highly commended."
+        "Trainee ADEMUWAGUN OLUWATIMILEHIN SAMUEL exhibited exemplary discipline, intellectual curiosity, and diligence throughout the industrial training program. He integrated seamlessly into our operations team, handled technical assignments with admirable precision, and maintained faultless punctuality. He is fully cleared by the organization and is warmly commended to his academic faculty."
     )
     r_rem_text.font.size = Pt(8)
     
@@ -451,11 +451,11 @@ def create_evaluation_form(output_path, assets_dir):
     p_auth_sub = c_auth_left.add_paragraph()
     p_auth_sub.paragraph_format.space_before = Pt(2)
     p_auth_sub.paragraph_format.line_spacing = 1.15
-    r_aname = p_auth_sub.add_run("Marquis\n")
+    r_aname = p_auth_sub.add_run("Michael Marquis\n")
     r_aname.bold = True
     r_aname.font.size = Pt(9.5)
     r_aname.font.color.rgb = RGBColor(27, 77, 137)
-    r_atitle = p_auth_sub.add_run("Head of Human Resources & Talent Development\nEIB Stratoc Limited (EIB Group)")
+    r_atitle = p_auth_sub.add_run("Group Head, Training & HRM (DICO)\nEIB Stratoc Limited (EIB Group)\nDate Certified: 12th October, 2026")
     r_atitle.font.size = Pt(8)
     r_atitle.font.color.rgb = RGBColor(90, 100, 115)
     
@@ -471,6 +471,7 @@ def create_evaluation_form(output_path, assets_dir):
     print(f"Evaluation form saved to {output_path}")
 
 if __name__ == '__main__':
+    import shutil
     base_dir = r"C:\Users\USER\.gemini\antigravity-ide\scratch\eib-internship-suite"
     assets_dir = os.path.join(base_dir, "assets")
     
@@ -479,3 +480,9 @@ if __name__ == '__main__':
     
     create_completion_letter(letter_out, assets_dir)
     create_evaluation_form(form_out, assets_dir)
+
+    desktop_dir = r"C:\Users\USER\Desktop"
+    if os.path.exists(desktop_dir):
+        shutil.copy2(letter_out, os.path.join(desktop_dir, "EIB_Internship_Completion_Letter.docx"))
+        shutil.copy2(form_out, os.path.join(desktop_dir, "EIB_SIWES_Evaluation_Form.docx"))
+        print("Updated copies successfully synced to Desktop!")

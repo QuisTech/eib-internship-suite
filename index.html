@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="highlight-editable">
+<body>
   <!-- App Header / Toolbar -->
   <header class="app-header no-print">
     <div class="header-left">
@@ -65,11 +65,11 @@
 
       <!-- Quick Presets -->
       <div class="form-section presets-section">
-        <label class="section-label">Quick Industry Presets</label>
+        <label class="section-label">Quick Presets</label>
         <div class="preset-buttons">
-          <button class="preset-btn" data-preset="tech">Tech / Computer Science</button>
-          <button class="preset-btn" data-preset="eng">Engineering & Operations</button>
-          <button class="preset-btn" data-preset="bus">Business & Logistics</button>
+          <button class="preset-btn" data-preset="samuel">Samuel (Covenant Univ)</button>
+          <button class="preset-btn" data-preset="tech">UNILAG / Tech</button>
+          <button class="preset-btn" data-preset="eng">FUTO / Engineering</button>
         </div>
       </div>
 
@@ -78,17 +78,17 @@
         <label class="section-label">1. Student Information</label>
         <div class="form-group">
           <label>Student Full Name</label>
-          <input type="text" id="studentNameInput" value="Oluwaseun Emmanuel Adeyemi" placeholder="e.g. Oluwaseun Emmanuel Adeyemi">
+          <input type="text" id="studentNameInput" value="ADEMUWAGUN OLUWATIMILEHIN SAMUEL" placeholder="e.g. ADEMUWAGUN OLUWATIMILEHIN SAMUEL">
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Matriculation Number</label>
-            <input type="text" id="matricNoInput" value="190407028" placeholder="e.g. 190407028">
+            <input type="text" id="matricNoInput" value="23CJ03334" placeholder="e.g. 23CJ03334">
           </div>
           <div class="form-group">
             <label>Level / Year</label>
             <select id="levelInput">
-              <option value="400 Level (Undergraduate)">400 Level (Undergrad)</option>
+              <option value="400 Level (Undergraduate)" selected>400 Level (Undergrad)</option>
               <option value="300 Level (Undergraduate)">300 Level (Undergrad)</option>
               <option value="ND II (National Diploma)">ND II (Polytechnic)</option>
               <option value="HND II (Higher National Diploma)">HND II (Polytechnic)</option>
@@ -98,16 +98,16 @@
         </div>
         <div class="form-group">
           <label>Institution / University / Polytechnic</label>
-          <input type="text" id="institutionInput" value="University of Lagos (UNILAG)" placeholder="e.g. University of Lagos">
+          <input type="text" id="institutionInput" value="Covenant University" placeholder="e.g. Covenant University">
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Faculty / School</label>
-            <input type="text" id="facultyInput" value="Faculty of Science" placeholder="e.g. Faculty of Science">
+            <input type="text" id="facultyInput" value="EIE COMPUTER ENGINEERING" placeholder="e.g. EIE COMPUTER ENGINEERING">
           </div>
           <div class="form-group">
             <label>Department / Discipline</label>
-            <input type="text" id="departmentInput" value="Computer Science" placeholder="e.g. Computer Science">
+            <input type="text" id="departmentInput" value="Computer Engineering" placeholder="e.g. Computer Engineering">
           </div>
         </div>
       </div>
@@ -118,11 +118,11 @@
         <div class="form-row">
           <div class="form-group">
             <label>Reference Code</label>
-            <input type="text" id="refNoInput" value="EIB/HR/SIWES/2026/042">
+            <input type="text" id="refNoInput" value="EIB/HR/2026/042">
           </div>
           <div class="form-group">
             <label>Assigned Division / Unit</label>
-            <input type="text" id="unitInput" value="Operations & Technical Services Division">
+            <input type="text" id="unitInput" value="Research and Analysis Wing">
           </div>
         </div>
 
@@ -131,32 +131,32 @@
           <div class="duration-controls-grid">
             <div class="duration-field">
               <span class="sub-label">Months</span>
-              <input type="number" id="durationMonthsInput" min="0" max="24" value="6" placeholder="Months">
+              <input type="number" id="durationMonthsInput" min="0" max="24" value="2.5" step="0.5" placeholder="Months">
             </div>
             <div class="duration-field">
               <span class="sub-label">Weeks</span>
-              <input type="number" id="durationWeeksInput" min="0" max="104" value="24" placeholder="Weeks">
+              <input type="number" id="durationWeeksInput" min="0" max="104" value="10" placeholder="Weeks">
             </div>
           </div>
           <div class="duration-format-row">
             <span class="sub-label">Formatted Duration (Custom Editable Text)</span>
-            <input type="text" id="durationInput" value="six (6) months (24 weeks)" placeholder="e.g. six (6) months (24 weeks)">
+            <input type="text" id="durationInput" value="10 weeks" placeholder="e.g. 10 weeks">
           </div>
           <div class="duration-presets-pills">
-            <button type="button" class="duration-pill active" data-m="6" data-w="24">6 Mon (24 Wks)</button>
+            <button type="button" class="duration-pill active" data-m="2.5" data-w="10">10 Weeks</button>
+            <button type="button" class="duration-pill" data-m="6" data-w="24">6 Mon (24 Wks)</button>
             <button type="button" class="duration-pill" data-m="3" data-w="12">3 Mon (12 Wks)</button>
-            <button type="button" class="duration-pill" data-m="4" data-w="16">4 Mon (16 Wks)</button>
             <button type="button" class="duration-pill" data-m="12" data-w="52">1 Year (52 Wks)</button>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Commencement Date</label>
-            <input type="text" id="startDateInput" value="14th April, 2026">
+            <input type="text" id="startDateInput" value="27th July, 2026">
           </div>
           <div class="form-group">
             <label>Completion Date</label>
-            <input type="text" id="endDateInput" value="9th October, 2026">
+            <input type="text" id="endDateInput" value="2nd October, 2026">
           </div>
         </div>
       </div>
@@ -243,11 +243,11 @@
         <div class="form-row">
           <div class="form-group">
             <label>HR Signatory Name</label>
-            <input type="text" id="hrNameInput" value="Marquis">
+            <input type="text" id="hrNameInput" value="Michael Marquis">
           </div>
           <div class="form-group">
             <label>HR Signatory Title</label>
-            <input type="text" id="hrTitleInput" value="Head of Human Resources & Talent Development">
+            <input type="text" id="hrTitleInput" value="Group Head, Training & HRM (DICO)">
           </div>
         </div>
       </div>
@@ -265,7 +265,7 @@
         <div class="edit-toolbar-left">
           <span class="edit-status-badge"><span class="pulse-dot"></span> Direct Page Editing: ACTIVE</span>
           <label class="toggle-highlight-label">
-            <input type="checkbox" id="toggleHighlightBoxes" checked>
+            <input type="checkbox" id="toggleHighlightBoxes">
             <span>Show Editable Highlights</span>
           </label>
         </div>
@@ -293,48 +293,48 @@
             </div>
             <div class="lh-right">
               <h1 class="company-name" contenteditable="true">EIB STRATOC LIMITED</h1>
-              <p class="company-reg" contenteditable="true">Member of EIB Group • RC: 1849204</p>
-              <p class="company-address" contenteditable="true">Plot 12, Commercial Block, Victoria Island, Lagos, Nigeria</p>
-              <p class="company-contact" contenteditable="true">Tel: +234 (0) 803 000 0000 | +234 (0) 1 290 0000</p>
-              <p class="company-web" contenteditable="true">Email: hr@eibstratoc.com | Website: www.eibstratoc.com</p>
+              <p class="company-address" contenteditable="true">EIB & SAC FACILITY, OFF UNIGAZ, Idu Industrial Area</p>
+              <p class="company-address" contenteditable="true">Abuja, Nigeria</p>
+              <p class="company-contact" contenteditable="true">Tel: +234 (0) 900 000 0000</p>
+              <p class="company-web" contenteditable="true">Website: www.eibstratoc.com</p>
             </div>
           </div>
           <div class="lh-rule"></div>
 
           <!-- Metadata -->
           <div class="doc-meta-row">
-            <div class="meta-item"><span class="meta-label">REF:</span> <span class="bind-ref" contenteditable="true">EIB/HR/SIWES/2026/042</span></div>
+            <div class="meta-item"><span class="meta-label">REF:</span> <span class="bind-ref" contenteditable="true">EIB/HR/2026/042</span></div>
             <div class="meta-item"><span class="meta-label">DATE:</span> <span class="bind-today" contenteditable="true">12th October, 2026</span></div>
           </div>
 
           <!-- Addressee -->
           <div class="doc-addressee" contenteditable="true">
-            <p><strong>The Coordinator,</strong></p>
-            <p>Students Industrial Work Experience Scheme (SIWES) Unit / Directorate,</p>
-            <p><span class="bind-inst">University of Lagos (UNILAG)</span>,</p>
-            <p>Akoka, Yaba, Lagos State, Nigeria.</p>
+            <p><strong>The Industrial Training Coordinator</strong></p>
+            <p>Department of <span class="bind-faculty">EIE COMPUTER ENGINEERING</span></p>
+            <p><span class="bind-inst">Covenant University</span></p>
+            <p>Ota, Ogun State, Nigeria.</p>
           </div>
 
           <p class="salutation" contenteditable="true">Dear Sir/Madam,</p>
 
           <!-- Letter Title -->
           <div class="letter-title" contenteditable="true">
-            <h2>LETTER OF COMPLETION OF INDUSTRIAL TRAINING ATTACHMENT (SIWES)</h2>
-            <div class="sub-title">RE: <span class="bind-name">OLUWASEUN EMMANUEL ADEYEMI</span> &nbsp;|&nbsp; MATRIC NO: <span class="bind-matric">190407028</span></div>
+            <h2>LETTER OF COMPLETION OF INTERNSHIP</h2>
+            <div class="sub-title">RE: <span class="bind-name">ADEMUWAGUN OLUWATIMILEHIN SAMUEL</span> &nbsp;|&nbsp; MATRIC NO: <span class="bind-matric">23CJ03334</span></div>
           </div>
 
           <!-- Body Content -->
           <div class="letter-body" contenteditable="true">
             <p>
-              This is to formally certify that <strong><span class="bind-name">Oluwaseun Emmanuel Adeyemi</span></strong>, a student of the Department of <strong><span class="bind-dept">Computer Science</span></strong>, <span class="bind-faculty">Faculty of Science</span>, <strong><span class="bind-inst">University of Lagos (UNILAG)</span></strong>, with Matriculation Number <strong><span class="bind-matric">190407028</span></strong>, has successfully completed his mandatory <strong><span class="bind-duration">six (6) months (24 weeks)</span></strong> Students Industrial Work Experience Scheme (SIWES) internship attachment with <strong>EIB STRATOC LIMITED</strong>, from <strong><span class="bind-start">14th April, 2026</span></strong> to <strong><span class="bind-end">9th October, 2026</span></strong>.
+              This is to formally certify that <strong><span class="bind-name">ADEMUWAGUN OLUWATIMILEHIN SAMUEL</span></strong>, a student of the Department of <strong><span class="bind-dept">Computer Engineering</span></strong>, <span class="bind-faculty">EIE COMPUTER ENGINEERING</span>, <strong><span class="bind-inst">Covenant University</span></strong>, with Matriculation Number <strong><span class="bind-matric">23CJ03334</span></strong>, has successfully completed his mandatory <strong><span class="bind-duration">10 weeks</span></strong> internship attachment with <strong>EIB STRATOC LIMITED</strong>, from <strong><span class="bind-start">27th July, 2026</span></strong> to <strong><span class="bind-end">2nd October, 2026</span></strong>.
             </p>
 
             <p>
-              During his attachment period, he was deployed to our <strong><span class="bind-unit">Operations & Technical Services Division</span></strong>. Throughout this tenure, he was thoroughly engaged in hands-on industry workflows, software systems operations, troubleshooting, network diagnostic evaluations, and collaborative client support. He exhibited an exemplary aptitude for rapidly absorbing complex operational guidelines and translating technical theory into high-impact practical solutions.
+              During his attachment period, he was deployed to our <strong><span class="bind-unit">Research and Analysis Wing</span></strong>. Throughout this tenure, he was thoroughly engaged in hands-on industry workflows, software systems operations, troubleshooting, network diagnostic evaluations, and collaborative client support. He exhibited an exemplary aptitude for rapidly absorbing complex operational guidelines and translating technical theory into high-impact practical solutions.
             </p>
 
             <p>
-              Throughout his stay at EIB Stratoc Limited, <span class="bind-fname">Oluwaseun</span> conducted himself with the highest degree of professionalism, diligence, integrity, and discipline. He was consistently punctual, embraced workplace responsibilities proactively, harmonized well with team colleagues and senior staff, and complied strictly with all corporate and occupational safety standards.
+              Throughout his stay at EIB Stratoc Limited, <span class="bind-fname">ADEMUWAGUN</span> conducted himself with the highest degree of professionalism, diligence, integrity, and discipline. He was consistently punctual, embraced workplace responsibilities proactively, harmonized well with team colleagues and senior staff, and complied strictly with all corporate and occupational safety standards.
             </p>
 
             <p>
@@ -355,10 +355,10 @@
                   <img src="assets/marquis_signature.png" alt="Marquis HR Signature" class="hr-sig-img" id="letterSigImg">
                 </div>
                 <div class="sig-details" contenteditable="true">
-                  <p class="sig-name"><strong class="bind-hr-name">Marquis</strong></p>
-                  <p class="sig-title"><span class="bind-hr-title">Head of Human Resources & Talent Development</span></p>
+                  <p class="sig-name"><strong class="bind-hr-name">Michael Marquis</strong></p>
+                  <p class="sig-title"><span class="bind-hr-title">Group Head, Training & HRM (DICO)</span></p>
                   <p class="sig-org">EIB Stratoc Limited (EIB Group)</p>
-                  <p class="sig-mail">hr@eibstratoc.com</p>
+                  <p class="sig-mail">hmichael.marquis@eibgroup.com</p>
                 </div>
               </div>
 
@@ -372,7 +372,7 @@
 
           <!-- Letterhead Footer -->
           <div class="sheet-footer" contenteditable="true">
-            <p>EIB STRATOC LIMITED • Corporate Headquarters: Lagos, Nigeria • CAC RC: 1849204 • Always on Time</p>
+            <p>EIB STRATOC LIMITED • Corporate Headquarters: Abuja, Nigeria • Always on Time</p>
           </div>
         </article>
 
@@ -388,7 +388,7 @@
             </div>
             <div class="form-header-right">
               <h1 class="f-company" contenteditable="true">EIB STRATOC LIMITED</h1>
-              <h2 class="f-doc-title" contenteditable="true">STUDENT INDUSTRIAL WORK EXPERIENCE SCHEME (SIWES)</h2>
+              <h2 class="f-doc-title" contenteditable="true">INTERNSHIP</h2>
               <h3 class="f-doc-sub" contenteditable="true">END-OF-ATTACHMENT EMPLOYER'S EVALUATION & CLEARANCE REPORT</h3>
               <p class="f-confidential" contenteditable="true">CONFIDENTIAL INDUSTRY-BASED SUPERVISOR'S ASSESSMENT FORM</p>
             </div>
@@ -401,27 +401,27 @@
             <table class="grid-table">
               <tr>
                 <td class="lbl" contenteditable="true">Student Full Name:</td>
-                <td class="val bind-name" contenteditable="true">Oluwaseun Emmanuel Adeyemi</td>
+                <td class="val bind-name" contenteditable="true">ADEMUWAGUN OLUWATIMILEHIN SAMUEL</td>
                 <td class="lbl" contenteditable="true">Matriculation No:</td>
-                <td class="val bind-matric" contenteditable="true">190407028</td>
+                <td class="val bind-matric" contenteditable="true">23CJ03334</td>
               </tr>
               <tr>
                 <td class="lbl" contenteditable="true">Tertiary Institution:</td>
-                <td class="val bind-inst" contenteditable="true">University of Lagos (UNILAG)</td>
+                <td class="val bind-inst" contenteditable="true">Covenant University</td>
                 <td class="lbl" contenteditable="true">Faculty / School:</td>
-                <td class="val bind-faculty" contenteditable="true">Faculty of Science</td>
+                <td class="val bind-faculty" contenteditable="true">EIE COMPUTER ENGINEERING</td>
               </tr>
               <tr>
                 <td class="lbl" contenteditable="true">Department / Course:</td>
-                <td class="val bind-dept" contenteditable="true">Computer Science</td>
+                <td class="val bind-dept" contenteditable="true">Computer Engineering</td>
                 <td class="lbl" contenteditable="true">Level / Year of Study:</td>
                 <td class="val bind-level" contenteditable="true">400 Level (Undergraduate)</td>
               </tr>
               <tr>
                 <td class="lbl" contenteditable="true">Attachment Duration:</td>
-                <td class="val" contenteditable="true"><span class="bind-duration">six (6) months (24 weeks)</span> (<span class="bind-start">14th Apr 2026</span> to <span class="bind-end">9th Oct 2026</span>)</td>
+                <td class="val" contenteditable="true"><span class="bind-duration">10 weeks</span> (<span class="bind-start">27th Jul 2026</span> to <span class="bind-end">2nd Oct 2026</span>)</td>
                 <td class="lbl" contenteditable="true">Assigned Division:</td>
-                <td class="val bind-unit" contenteditable="true">Operations & Technical Services Division</td>
+                <td class="val bind-unit" contenteditable="true">Research and Analysis Wing</td>
               </tr>
             </table>
           </div>
@@ -452,28 +452,28 @@
                   <td contenteditable="true"><strong>Technical Competence & Application of Knowledge</strong></td>
                   <td class="center bold"><span class="cell-score" data-c="1" contenteditable="true">9</span> / 10</td>
                   <td class="center"><span class="status-pill blue" contenteditable="true">Very Good</span></td>
-                  <td contenteditable="true">Fast learner; sharp acumen</td>
+                  <td contenteditable="true">Very Good competence</td>
                 </tr>
                 <tr>
                   <td class="center" contenteditable="true">3</td>
                   <td contenteditable="true"><strong>Quality of Work, Accuracy & Thoroughness</strong></td>
                   <td class="center bold"><span class="cell-score" data-c="2" contenteditable="true">9</span> / 10</td>
                   <td class="center"><span class="status-pill blue" contenteditable="true">Very Good</span></td>
-                  <td contenteditable="true">Neat and dependable execution</td>
+                  <td contenteditable="true">Very Good accuracy</td>
                 </tr>
                 <tr>
                   <td class="center" contenteditable="true">4</td>
                   <td contenteditable="true"><strong>Initiative, Problem Solving & Creativity</strong></td>
                   <td class="center bold"><span class="cell-score" data-c="3" contenteditable="true">9</span> / 10</td>
                   <td class="center"><span class="status-pill blue" contenteditable="true">Very Good</span></td>
-                  <td contenteditable="true">Proactive approach to tasks</td>
+                  <td contenteditable="true">Very proactive</td>
                 </tr>
                 <tr>
                   <td class="center" contenteditable="true">5</td>
                   <td contenteditable="true"><strong>Interpersonal Relations, Teamwork & Respect</strong></td>
                   <td class="center bold"><span class="cell-score" data-c="4" contenteditable="true">10</span> / 10</td>
                   <td class="center"><span class="status-pill green" contenteditable="true">Excellent</span></td>
-                  <td contenteditable="true">Harmonious collaborator</td>
+                  <td contenteditable="true">Inspiring team leader & peer</td>
                 </tr>
                 <tr>
                   <td class="center" contenteditable="true">6</td>
@@ -487,7 +487,7 @@
                   <td contenteditable="true"><strong>SIWES Logbook Maintenance & Technical Reporting</strong></td>
                   <td class="center bold"><span class="cell-score" data-c="6" contenteditable="true">9</span> / 10</td>
                   <td class="center"><span class="status-pill blue" contenteditable="true">Very Good</span></td>
-                  <td contenteditable="true">Up-to-date and meticulously kept</td>
+                  <td contenteditable="true">Very thorough record</td>
                 </tr>
               </tbody>
             </table>
@@ -500,7 +500,7 @@
               <div class="qualitative-box" contenteditable="true">
                 <p class="box-label"><strong>Industry Supervisor's Comprehensive Remarks:</strong></p>
                 <p>
-                  Trainee <span class="bind-name">Oluwaseun Emmanuel Adeyemi</span> exhibited exemplary discipline, intellectual curiosity, and diligence throughout the six-month industrial training program. He integrated seamlessly into our operations team, handled technical assignments with admirable precision, and maintained faultless punctuality. He is fully cleared by the organization and is warmly commended to his academic faculty.
+                  Trainee <span class="bind-name">ADEMUWAGUN OLUWATIMILEHIN SAMUEL</span> exhibited exemplary discipline, intellectual curiosity, and diligence throughout the industrial training program. He integrated seamlessly into our operations team, handled technical assignments with admirable precision, and maintained faultless punctuality. He is fully cleared by the organization and is warmly commended to his academic faculty.
                 </p>
               </div>
               <div class="quantitative-box" contenteditable="true">
@@ -521,8 +521,8 @@
                   <img src="assets/marquis_signature.png" alt="HR Signature" class="hr-sig-img" id="formSigImg">
                 </div>
                 <div class="auth-text" contenteditable="true">
-                  <p><strong class="bind-hr-name">Marquis</strong></p>
-                  <p><span class="bind-hr-title">Head of Human Resources & Talent Development</span></p>
+                  <p><strong class="bind-hr-name">Michael Marquis</strong></p>
+                  <p><span class="bind-hr-title">Group Head, Training & HRM (DICO)</span></p>
                   <p>EIB Stratoc Limited (EIB Group)</p>
                   <p class="auth-date">Date Certified: <span class="bind-today">12th October, 2026</span></p>
                 </div>
@@ -563,29 +563,29 @@
                 <div class="cert-ribbon">
                   <span class="ribbon-text" contenteditable="true">CERTIFICATE OF INDUSTRIAL TRAINING</span>
                 </div>
-                <p class="cert-scheme" contenteditable="true">STUDENTS INDUSTRIAL WORK EXPERIENCE SCHEME (SIWES)</p>
+                <p class="cert-scheme" contenteditable="true">INTERNSHIP</p>
               </div>
 
               <!-- Certificate Presentation Text -->
               <div class="cert-body">
                 <p class="cert-intro" contenteditable="true">THIS IS TO PROUDLY CERTIFY THAT</p>
                 
-                <h2 class="cert-student-name bind-name" contenteditable="true">Oluwaseun Emmanuel Adeyemi</h2>
+                <h2 class="cert-student-name bind-name" contenteditable="true">ADEMUWAGUN OLUWATIMILEHIN SAMUEL</h2>
                 
                 <p class="cert-matric-row" contenteditable="true">
-                  MATRICULATION NO: <span class="bind-matric cert-bold">190407028</span>
+                  MATRICULATION NO: <span class="bind-matric cert-bold">23CJ03334</span>
                 </p>
 
                 <p class="cert-institution-row" contenteditable="true">
-                  OF <span class="bind-inst cert-bold">UNIVERSITY OF LAGOS (UNILAG)</span>
+                  OF <span class="bind-inst cert-bold">Covenant University</span>
                 </p>
 
                 <p class="cert-dept-row" contenteditable="true">
-                  DEPARTMENT OF <span class="bind-dept cert-bold">COMPUTER SCIENCE</span>
+                  DEPARTMENT OF <span class="bind-dept cert-bold">Computer Engineering</span>
                 </p>
 
                 <p class="cert-desc" contenteditable="true">
-                  has successfully and commendably completed the mandatory <strong class="bind-duration">six (6) months (24 weeks)</strong> Industrial Training program at <strong style="color: #1b4d89;">EIB STRATOC LIMITED</strong> from <strong class="bind-start">14th April, 2026</strong> to <strong class="bind-end">9th October, 2026</strong>, having demonstrated high technical competence, exemplary discipline, and outstanding dedication.
+                  has successfully and commendably completed the mandatory <strong class="bind-duration">ten (10) weeks</strong> Industrial Training program at <strong style="color: #1b4d89;">EIB STRATOC LIMITED</strong> from <strong class="bind-start">27th July, 2026</strong> to <strong class="bind-end">2nd October, 2026</strong>, having demonstrated high technical competence, exemplary discipline, and outstanding dedication.
                 </p>
               </div>
 
@@ -596,8 +596,8 @@
                     <img src="assets/marquis_signature.png" alt="HR Signature" class="hr-sig-img" id="certSigImg">
                   </div>
                   <div class="cert-sig-line"></div>
-                  <p class="cert-sig-person" contenteditable="true"><strong class="bind-hr-name">Marquis</strong></p>
-                  <p class="cert-sig-role" contenteditable="true"><span class="bind-hr-title">Head of Human Resources & Talent</span></p>
+                  <p class="cert-sig-person" contenteditable="true"><strong class="bind-hr-name">Michael Marquis</strong></p>
+                  <p class="cert-sig-role" contenteditable="true"><span class="bind-hr-title">Group Head, Training & HRM (DICO)</span></p>
                   <p class="cert-sig-org" contenteditable="true">EIB Stratoc Limited</p>
                 </div>
 
@@ -621,7 +621,7 @@
               </div>
 
               <div class="cert-footer-code" contenteditable="true">
-                <span>CERTIFICATE REF: EIB-SIWES-2026-CERT-042 • VERIFIED INDUSTRY ATTACHMENT</span>
+                <span>CERTIFICATE REF: EIB-2026-CERT-042 • VERIFIED INDUSTRY ATTACHMENT</span>
               </div>
             </div>
           </div>
