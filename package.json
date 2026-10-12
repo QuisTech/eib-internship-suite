@@ -1,0 +1,16 @@
+{
+  "name": "eib-internship-suite",
+  "version": "1.0.0",
+  "description": "EIB Stratoc Limited • SIWES & Internship Documentation Portal (Nigeria)",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "siwes",
+    "internship",
+    "nigeria",
+    "eib-group"
+  ],
+  "author": "Marquis",
+  "license": "MIT"
+}

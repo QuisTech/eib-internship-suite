@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EIB Stratoc Limited • SIWES & Internship Documentation Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="highlight-editable">
+  <!-- App Header / Toolbar -->
+  <header class="app-header no-print">
+    <div class="header-left">
+      <div class="brand-badge">
+        <img src="assets/logo.png" alt="EIB Stratoc" id="headerLogo" class="header-logo">
+        <div class="brand-text">
+          <span class="brand-title">EIB STRATOC LIMITED</span>
+          <span class="brand-sub">SIWES & Internship Documentation Suite • Nigeria</span>
+        </div>
+      </div>
+      <span class="pill-badge"><span class="dot"></span> ITF / SIWES Compliant</span>
+    </div>
+
+    <!-- Document Navigation Tabs -->
+    <nav class="doc-tabs">
+      <button class="tab-btn active" data-tab="letter">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>1. Completion Letter</span>
+      </button>
+      <button class="tab-btn" data-tab="form">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        <span>2. Evaluation Form (Form 8)</span>
+      </button>
+      <button class="tab-btn" data-tab="cert">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+        <span>3. Certificate of Attachment</span>
+      </button>
+    </nav>
+
+    <!-- Top Action Buttons -->
+    <div class="header-right">
+      <button id="downloadWordBtn" class="btn btn-secondary" title="Open or download pre-generated Word docx files">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Word (.docx)</span>
+      </button>
+      <button id="printBtn" class="btn btn-primary" title="Print document or save as clean PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span>Print / Save as PDF</span>
+      </button>
+      <button id="toggleSidebarBtn" class="btn btn-icon" title="Toggle Controls">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <!-- Sidebar Control Panel -->
+    <aside class="sidebar no-print" id="sidebar">
+      <div class="sidebar-header">
+        <h3>Document Customizer</h3>
+        <span class="sub-hint">Changes update all documents live</span>
+      </div>
+
+      <!-- Quick Presets -->
+      <div class="form-section presets-section">
+        <label class="section-label">Quick Industry Presets</label>
+        <div class="preset-buttons">
+          <button class="preset-btn" data-preset="tech">Tech / Computer Science</button>
+          <button class="preset-btn" data-preset="eng">Engineering & Operations</button>
+          <button class="preset-btn" data-preset="bus">Business & Logistics</button>
+        </div>
+      </div>
+
+      <!-- Student Details -->
+      <div class="form-section">
+        <label class="section-label">1. Student Information</label>
+        <div class="form-group">
+          <label>Student Full Name</label>
+          <input type="text" id="studentNameInput" value="Oluwaseun Emmanuel Adeyemi" placeholder="e.g. Oluwaseun Emmanuel Adeyemi">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Matriculation Number</label>
+            <input type="text" id="matricNoInput" value="190407028" placeholder="e.g. 190407028">
+          </div>
+          <div class="form-group">
+            <label>Level / Year</label>
+            <select id="levelInput">
+              <option value="400 Level (Undergraduate)">400 Level (Undergrad)</option>
+              <option value="300 Level (Undergraduate)">300 Level (Undergrad)</option>
+              <option value="ND II (National Diploma)">ND II (Polytechnic)</option>
+              <option value="HND II (Higher National Diploma)">HND II (Polytechnic)</option>
+              <option value="Post-ND (1-Year Industrial Attachment)">Post-ND (1-Year IT)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Institution / University / Polytechnic</label>
+          <input type="text" id="institutionInput" value="University of Lagos (UNILAG)" placeholder="e.g. University of Lagos">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Faculty / School</label>
+            <input type="text" id="facultyInput" value="Faculty of Science" placeholder="e.g. Faculty of Science">
+          </div>
+          <div class="form-group">
+            <label>Department / Discipline</label>
+            <input type="text" id="departmentInput" value="Computer Science" placeholder="e.g. Computer Science">
+          </div>
+        </div>
+      </div>
+
+      <!-- Internship Attachment Settings -->
+      <div class="form-section">
+        <label class="section-label">2. Attachment Parameters</label>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Attachment Duration</label>
+            <select id="durationInput">
+              <option value="six (6) months">6 Months (Standard SIWES)</option>
+              <option value="three (3) months">3 Months (Short Attachment)</option>
+              <option value="four (4) months">4 Months (Polytechnic ND)</option>
+              <option value="one (1) year">1 Year (Compulsory Post-ND IT)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Reference Code</label>
+            <input type="text" id="refNoInput" value="EIB/HR/SIWES/2026/042">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Commencement Date</label>
+            <input type="text" id="startDateInput" value="14th April, 2026">
+          </div>
+          <div class="form-group">
+            <label>Completion Date</label>
+            <input type="text" id="endDateInput" value="9th October, 2026">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Assigned Company Division / Department</label>
+          <input type="text" id="unitInput" value="Operations & Technical Services Division">
+        </div>
+      </div>
+
+      <!-- Performance Evaluation (SIWES Form 8) -->
+      <div class="form-section">
+        <label class="section-label">3. Performance Appraisal (Out of 10)</label>
+        <div class="metric-grid">
+          <div class="metric-row">
+            <span>Punctuality & Attendance</span>
+            <input type="number" min="1" max="10" value="10" class="score-input" data-criterion="0">
+          </div>
+          <div class="metric-row">
+            <span>Technical Competence</span>
+            <input type="number" min="1" max="10" value="9" class="score-input" data-criterion="1">
+          </div>
+          <div class="metric-row">
+            <span>Quality & Accuracy of Work</span>
+            <input type="number" min="1" max="10" value="9" class="score-input" data-criterion="2">
+          </div>
+          <div class="metric-row">
+            <span>Initiative & Problem Solving</span>
+            <input type="number" min="1" max="10" value="9" class="score-input" data-criterion="3">
+          </div>
+          <div class="metric-row">
+            <span>Teamwork & Interpersonal</span>
+            <input type="number" min="1" max="10" value="10" class="score-input" data-criterion="4">
+          </div>
+          <div class="metric-row">
+            <span>Safety & Company Discipline</span>
+            <input type="number" min="1" max="10" value="10" class="score-input" data-criterion="5">
+          </div>
+          <div class="metric-row">
+            <span>Logbook & Report Records</span>
+            <input type="number" min="1" max="10" value="9" class="score-input" data-criterion="6">
+          </div>
+        </div>
+        <div class="score-badge-preview">
+          <span>Aggregate Score: <strong id="aggregateScoreText">66 / 70 (94.3%)</strong></span>
+          <span class="badge-grade">Grade A (Distinction)</span>
+        </div>
+      </div>
+
+      <!-- Stamp & Signature Configuration -->
+      <div class="form-section">
+        <label class="section-label">4. Stamp & Signature Options</label>
+        <div class="form-group">
+          <label>Company Stamp Style</label>
+          <div class="radio-card-group">
+            <label class="radio-card">
+              <input type="radio" name="stampStyle" value="recreated_marquis" checked>
+              <div class="card-content">
+                <strong>Digital Vector Stamp (Recommended)</strong>
+                <span>Sharp 300DPI with Marquis signature</span>
+              </div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="stampStyle" value="original_photo">
+              <div class="card-content">
+                <strong>Authentic Photo Stamp</strong>
+                <span>Direct from provided stamp photo (with 09-06-26 signature)</span>
+              </div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="stampStyle" value="blank">
+              <div class="card-content">
+                <strong>Blank Digital Stamp</strong>
+                <span>Empty signature line for manual pen signing</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>HR Signature Style</label>
+          <select id="signatureStyleSelect">
+            <option value="black">HR Marquis Signature (Executive Black Ink)</option>
+            <option value="pen">HR Marquis Signature (Ballpoint Blue/Purple Pen)</option>
+            <option value="none">No Digital Signature (Leave blank for physical pen)</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>HR Signatory Name</label>
+            <input type="text" id="hrNameInput" value="Marquis">
+          </div>
+          <div class="form-group">
+            <label>HR Signatory Title</label>
+            <input type="text" id="hrTitleInput" value="Head of Human Resources & Talent Development">
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="edit-tip">💡 <em>Tip: You can edit in the sidebar OR directly on the document sheets!</em></p>
+      </div>
+    </aside>
+
+    <!-- Main Document Preview Stage -->
+    <main class="document-viewport">
+
+      <!-- Floating Direct Page Editing Action Bar -->
+      <div class="edit-toolbar no-print">
+        <div class="edit-toolbar-left">
+          <span class="edit-status-badge"><span class="pulse-dot"></span> Direct Page Editing: ACTIVE</span>
+          <label class="toggle-highlight-label">
+            <input type="checkbox" id="toggleHighlightBoxes" checked>
+            <span>Show Editable Highlights</span>
+          </label>
+        </div>
+        <div class="edit-toolbar-center">
+          <span class="tool-hint">Click or double-click anywhere on the paper to edit text directly</span>
+        </div>
+        <div class="edit-toolbar-right">
+          <button class="fmt-btn" id="btnBold" title="Bold (Ctrl+B)"><strong>B</strong></button>
+          <button class="fmt-btn" id="btnItalic" title="Italic (Ctrl+I)"><em>I</em></button>
+          <button class="fmt-btn" id="btnUnderline" title="Underline (Ctrl+U)"><u>U</u></button>
+          <button class="fmt-btn-reset" id="btnResetDoc" title="Reset Text to Template Defaults">↺ Reset</button>
+        </div>
+      </div>
+
+      <div class="sheet-container">
+        
+        <!-- ========================================== -->
+        <!-- DOCUMENT 1: OFFICIAL LETTER OF COMPLETION -->
+        <!-- ========================================== -->
+        <article class="a4-sheet doc-view active" id="view-letter">
+          <!-- Corporate Letterhead -->
+          <div class="letterhead">
+            <div class="lh-left">
+              <img src="assets/logo.png" alt="EIB Stratoc Limited Logo" class="lh-logo">
+            </div>
+            <div class="lh-right">
+              <h1 class="company-name" contenteditable="true">EIB STRATOC LIMITED</h1>
+              <p class="company-reg" contenteditable="true">Member of EIB Group • RC: 1849204</p>
+              <p class="company-address" contenteditable="true">Plot 12, Commercial Block, Victoria Island, Lagos, Nigeria</p>
+              <p class="company-contact" contenteditable="true">Tel: +234 (0) 803 000 0000 | +234 (0) 1 290 0000</p>
+              <p class="company-web" contenteditable="true">Email: hr@eibstratoc.com | Website: www.eibstratoc.com</p>
+            </div>
+          </div>
+          <div class="lh-rule"></div>
+
+          <!-- Metadata -->
+          <div class="doc-meta-row">
+            <div class="meta-item"><span class="meta-label">REF:</span> <span class="bind-ref" contenteditable="true">EIB/HR/SIWES/2026/042</span></div>
+            <div class="meta-item"><span class="meta-label">DATE:</span> <span class="bind-today" contenteditable="true">12th October, 2026</span></div>
+          </div>
+
+          <!-- Addressee -->
+          <div class="doc-addressee" contenteditable="true">
+            <p><strong>The Coordinator,</strong></p>
+            <p>Students Industrial Work Experience Scheme (SIWES) Unit / Directorate,</p>
+            <p><span class="bind-inst">University of Lagos (UNILAG)</span>,</p>
+            <p>Akoka, Yaba, Lagos State, Nigeria.</p>
+          </div>
+
+          <p class="salutation" contenteditable="true">Dear Sir/Madam,</p>
+
+          <!-- Letter Title -->
+          <div class="letter-title" contenteditable="true">
+            <h2>LETTER OF COMPLETION OF INDUSTRIAL TRAINING ATTACHMENT (SIWES)</h2>
+            <div class="sub-title">RE: <span class="bind-name">OLUWASEUN EMMANUEL ADEYEMI</span> &nbsp;|&nbsp; MATRIC NO: <span class="bind-matric">190407028</span></div>
+          </div>
+
+          <!-- Body Content -->
+          <div class="letter-body" contenteditable="true">
+            <p>
+              This is to formally certify that <strong><span class="bind-name">Oluwaseun Emmanuel Adeyemi</span></strong>, a student of the Department of <strong><span class="bind-dept">Computer Science</span></strong>, <span class="bind-faculty">Faculty of Science</span>, <strong><span class="bind-inst">University of Lagos (UNILAG)</span></strong>, with Matriculation Number <strong><span class="bind-matric">190407028</span></strong>, has successfully completed his mandatory <strong><span class="bind-duration">six (6) months</span></strong> Students Industrial Work Experience Scheme (SIWES) internship attachment with <strong>EIB STRATOC LIMITED</strong>, from <strong><span class="bind-start">14th April, 2026</span></strong> to <strong><span class="bind-end">9th October, 2026</span></strong>.
+            </p>
+
+            <p>
+              During his attachment period, he was deployed to our <strong><span class="bind-unit">Operations & Technical Services Division</span></strong>. Throughout this tenure, he was thoroughly engaged in hands-on industry workflows, software systems operations, troubleshooting, network diagnostic evaluations, and collaborative client support. He exhibited an exemplary aptitude for rapidly absorbing complex operational guidelines and translating technical theory into high-impact practical solutions.
+            </p>
+
+            <p>
+              Throughout his stay at EIB Stratoc Limited, <span class="bind-fname">Oluwaseun</span> conducted himself with the highest degree of professionalism, diligence, integrity, and discipline. He was consistently punctual, embraced workplace responsibilities proactively, harmonized well with team colleagues and senior staff, and complied strictly with all corporate and occupational safety standards.
+            </p>
+
+            <p>
+              Having met and satisfied all required departmental deliverables and performance standards, he has been officially cleared of all organizational obligations. We hereby commend his exceptional performance and unreservedly recommend him for academic assessment, logbook defense, and future professional pursuits.
+            </p>
+          </div>
+
+          <!-- Sign-off Block -->
+          <div class="signoff-section">
+            <div class="signoff-text" contenteditable="true">
+              <p>Yours faithfully,</p>
+              <p><strong>For: EIB STRATOC LIMITED</strong></p>
+            </div>
+
+            <div class="auth-box">
+              <div class="sig-col">
+                <div class="sig-wrapper">
+                  <img src="assets/marquis_signature.png" alt="Marquis HR Signature" class="hr-sig-img" id="letterSigImg">
+                </div>
+                <div class="sig-details" contenteditable="true">
+                  <p class="sig-name"><strong class="bind-hr-name">Marquis</strong></p>
+                  <p class="sig-title"><span class="bind-hr-title">Head of Human Resources & Talent Development</span></p>
+                  <p class="sig-org">EIB Stratoc Limited (EIB Group)</p>
+                  <p class="sig-mail">hr@eibstratoc.com</p>
+                </div>
+              </div>
+
+              <div class="stamp-col">
+                <div class="stamp-wrapper">
+                  <img src="assets/stamp_recreated_marquis.png" alt="Official EIB Stamp" class="official-stamp-img" id="letterStampImg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Letterhead Footer -->
+          <div class="sheet-footer" contenteditable="true">
+            <p>EIB STRATOC LIMITED • Corporate Headquarters: Lagos, Nigeria • CAC RC: 1849204 • Always on Time</p>
+          </div>
+        </article>
+
+
+        <!-- ========================================== -->
+        <!-- DOCUMENT 2: SIWES EVALUATION FORM (FORM 8) -->
+        <!-- ========================================== -->
+        <article class="a4-sheet doc-view" id="view-form">
+          <!-- Form Header -->
+          <div class="form-header">
+            <div class="form-header-left">
+              <img src="assets/logo.png" alt="EIB Stratoc Logo" class="form-logo">
+            </div>
+            <div class="form-header-right">
+              <h1 class="f-company" contenteditable="true">EIB STRATOC LIMITED</h1>
+              <h2 class="f-doc-title" contenteditable="true">STUDENT INDUSTRIAL WORK EXPERIENCE SCHEME (SIWES)</h2>
+              <h3 class="f-doc-sub" contenteditable="true">END-OF-ATTACHMENT EMPLOYER'S EVALUATION & CLEARANCE REPORT</h3>
+              <p class="f-confidential" contenteditable="true">CONFIDENTIAL INDUSTRY-BASED SUPERVISOR'S ASSESSMENT FORM</p>
+            </div>
+          </div>
+          <div class="lh-rule"></div>
+
+          <!-- Section A: Student & Attachment Profile -->
+          <div class="form-block">
+            <div class="block-title" contenteditable="true">SECTION A: TRAINEE & ATTACHMENT PROFILE</div>
+            <table class="grid-table">
+              <tr>
+                <td class="lbl" contenteditable="true">Student Full Name:</td>
+                <td class="val bind-name" contenteditable="true">Oluwaseun Emmanuel Adeyemi</td>
+                <td class="lbl" contenteditable="true">Matriculation No:</td>
+                <td class="val bind-matric" contenteditable="true">190407028</td>
+              </tr>
+              <tr>
+                <td class="lbl" contenteditable="true">Tertiary Institution:</td>
+                <td class="val bind-inst" contenteditable="true">University of Lagos (UNILAG)</td>
+                <td class="lbl" contenteditable="true">Faculty / School:</td>
+                <td class="val bind-faculty" contenteditable="true">Faculty of Science</td>
+              </tr>
+              <tr>
+                <td class="lbl" contenteditable="true">Department / Course:</td>
+                <td class="val bind-dept" contenteditable="true">Computer Science</td>
+                <td class="lbl" contenteditable="true">Level / Year of Study:</td>
+                <td class="val bind-level" contenteditable="true">400 Level (Undergraduate)</td>
+              </tr>
+              <tr>
+                <td class="lbl" contenteditable="true">Attachment Duration:</td>
+                <td class="val" contenteditable="true"><span class="bind-duration">six (6) months</span> (<span class="bind-start">14th Apr 2026</span> to <span class="bind-end">9th Oct 2026</span>)</td>
+                <td class="lbl" contenteditable="true">Assigned Division:</td>
+                <td class="val bind-unit" contenteditable="true">Operations & Technical Services Division</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Section B: Performance Appraisal Matrix -->
+          <div class="form-block">
+            <div class="block-title" contenteditable="true">SECTION B: PERFORMANCE APPRAISAL MATRIX (GRADED ON 10-POINT SCALE)</div>
+            <table class="matrix-table">
+              <thead>
+                <tr>
+                  <th style="width: 6%;" contenteditable="true">S/N</th>
+                  <th style="width: 48%;" contenteditable="true">Performance Evaluation Criterion</th>
+                  <th style="width: 14%; text-align: center;" contenteditable="true">Score (Max 10)</th>
+                  <th style="width: 14%; text-align: center;" contenteditable="true">Rating</th>
+                  <th style="width: 18%;" contenteditable="true">Industry Remarks</th>
+                </tr>
+              </thead>
+              <tbody id="evalTableBody">
+                <tr>
+                  <td class="center" contenteditable="true">1</td>
+                  <td contenteditable="true"><strong>Punctuality, Regularity & Attendance Record</strong></td>
+                  <td class="center bold"><span class="cell-score" data-c="0" contenteditable="true">10</span> / 10</td>
+                  <td class="center"><span class="status-pill green" contenteditable="true">Excellent</span></td>
+                  <td contenteditable="true">Always on time; zero absences</td>
+                </tr>
+                <tr>
+                  <td class="center" contenteditable="true">2</td>
+                  <td contenteditable="true"><strong>Technical Competence & Application of Knowledge</strong></td>
+                  <td class="center bold"><span class="cell-score" data-c="1" contenteditable="true">9</span> / 10</td>
+                  <td class="center"><span class="status-pill blue" contenteditable="true">Very Good</span></td>
+                  <td contenteditable="true">Fast learner; sharp acumen</td>
+                </tr>
+                <tr>
+                  <td class="center" contenteditable="true">3</td>
+                  <td contenteditable="true"><strong>Quality of Work, Accuracy & Thoroughness</strong></td>
+                  <td class="center bold"><span class="cell-score" data-c="2" contenteditable="true">9</span> / 10</td>
+                  <td class="center"><span class="status-pill blue" contenteditable="true">Very Good</span></td>
+                  <td contenteditable="true">Neat and dependable execution</td>
+                </tr>
+                <tr>
+                  <td class="center" contenteditable="true">4</td>
+                  <td contenteditable="true"><strong>Initiative, Problem Solving & Creativity</strong></td>
+                  <td class="center bold"><span class="cell-score" data-c="3" contenteditable="true">9</span> / 10</td>
+                  <td class="center"><span class="status-pill blue" contenteditable="true">Very Good</span></td>
+                  <td contenteditable="true">Proactive approach to tasks</td>
+                </tr>
+                <tr>
+                  <td class="center" contenteditable="true">5</td>
+                  <td contenteditable="true"><strong>Interpersonal Relations, Teamwork & Respect</strong></td>
+                  <td class="center bold"><span class="cell-score" data-c="4" contenteditable="true">10</span> / 10</td>
+                  <td class="center"><span class="status-pill green" contenteditable="true">Excellent</span></td>
+                  <td contenteditable="true">Harmonious collaborator</td>
+                </tr>
+                <tr>
+                  <td class="center" contenteditable="true">6</td>
+                  <td contenteditable="true"><strong>Compliance with Safety Standards & Company Rules</strong></td>
+                  <td class="center bold"><span class="cell-score" data-c="5" contenteditable="true">10</span> / 10</td>
+                  <td class="center"><span class="status-pill green" contenteditable="true">Excellent</span></td>
+                  <td contenteditable="true">Exemplary conduct; zero infractions</td>
+                </tr>
+                <tr>
+                  <td class="center" contenteditable="true">7</td>
+                  <td contenteditable="true"><strong>SIWES Logbook Maintenance & Technical Reporting</strong></td>
+                  <td class="center bold"><span class="cell-score" data-c="6" contenteditable="true">9</span> / 10</td>
+                  <td class="center"><span class="status-pill blue" contenteditable="true">Very Good</span></td>
+                  <td contenteditable="true">Up-to-date and meticulously kept</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Section C: Quantitative Summary & Qualitative Comments -->
+          <div class="form-block">
+            <div class="block-title" contenteditable="true">SECTION C: OVERALL RATING & SUPERVISOR'S QUALITATIVE ASSESSMENT</div>
+            <div class="eval-summary-grid">
+              <div class="qualitative-box" contenteditable="true">
+                <p class="box-label"><strong>Industry Supervisor's Comprehensive Remarks:</strong></p>
+                <p>
+                  Trainee <span class="bind-name">Oluwaseun Emmanuel Adeyemi</span> exhibited exemplary discipline, intellectual curiosity, and diligence throughout the six-month industrial training program. He integrated seamlessly into our operations team, handled technical assignments with admirable precision, and maintained faultless punctuality. He is fully cleared by the organization and is warmly commended to his academic faculty.
+                </p>
+              </div>
+              <div class="quantitative-box" contenteditable="true">
+                <span class="q-label">AGGREGATE SCORE</span>
+                <span class="q-val" id="formAggregateScore">66 / 70</span>
+                <span class="q-percent" id="formAggregatePercent">94.3%</span>
+                <span class="q-badge">GRADE: EXCELLENT (DISTINCTION)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section D: Official Authentication & Stamping -->
+          <div class="form-block auth-block">
+            <div class="block-title" contenteditable="true">SECTION D: OFFICIAL CLEARANCE & CORPORATE CERTIFICATION</div>
+            <div class="form-auth-row">
+              <div class="auth-signatory">
+                <div class="sig-holder">
+                  <img src="assets/marquis_signature.png" alt="HR Signature" class="hr-sig-img" id="formSigImg">
+                </div>
+                <div class="auth-text" contenteditable="true">
+                  <p><strong class="bind-hr-name">Marquis</strong></p>
+                  <p><span class="bind-hr-title">Head of Human Resources & Talent Development</span></p>
+                  <p>EIB Stratoc Limited (EIB Group)</p>
+                  <p class="auth-date">Date Certified: <span class="bind-today">12th October, 2026</span></p>
+                </div>
+              </div>
+
+              <div class="auth-stamp">
+                <div class="stamp-holder">
+                  <img src="assets/stamp_recreated_marquis.png" alt="Official Stamp" class="official-stamp-img" id="formStampImg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Footer -->
+          <div class="sheet-footer" contenteditable="true">
+            <p>EIB STRATOC LIMITED • SIWES Industrial Attachment Official Evaluation • Always on Time</p>
+          </div>
+        </article>
+
+
+        <!-- ========================================== -->
+        <!-- DOCUMENT 3: CERTIFICATE OF ATTACHMENT      -->
+        <!-- ========================================== -->
+        <article class="a4-sheet doc-view cert-sheet" id="view-cert">
+          <div class="cert-border-outer">
+            <div class="cert-border-inner">
+              <!-- Corner Ornaments -->
+              <div class="corner-ornament tl"></div>
+              <div class="corner-ornament tr"></div>
+              <div class="corner-ornament bl"></div>
+              <div class="corner-ornament br"></div>
+
+              <!-- Certificate Header -->
+              <div class="cert-header">
+                <img src="assets/logo.png" alt="EIB Stratoc Logo" class="cert-logo">
+                <h1 class="cert-company-title" contenteditable="true">EIB STRATOC LIMITED</h1>
+                <p class="cert-group-sub" contenteditable="true">MEMBER OF EIB GROUP • NIGERIA</p>
+                <div class="cert-ribbon">
+                  <span class="ribbon-text" contenteditable="true">CERTIFICATE OF INDUSTRIAL TRAINING</span>
+                </div>
+                <p class="cert-scheme" contenteditable="true">STUDENTS INDUSTRIAL WORK EXPERIENCE SCHEME (SIWES)</p>
+              </div>
+
+              <!-- Certificate Presentation Text -->
+              <div class="cert-body">
+                <p class="cert-intro" contenteditable="true">THIS IS TO PROUDLY CERTIFY THAT</p>
+                
+                <h2 class="cert-student-name bind-name" contenteditable="true">Oluwaseun Emmanuel Adeyemi</h2>
+                
+                <p class="cert-matric-row" contenteditable="true">
+                  MATRICULATION NO: <span class="bind-matric cert-bold">190407028</span>
+                </p>
+
+                <p class="cert-institution-row" contenteditable="true">
+                  OF <span class="bind-inst cert-bold">UNIVERSITY OF LAGOS (UNILAG)</span>
+                </p>
+
+                <p class="cert-dept-row" contenteditable="true">
+                  DEPARTMENT OF <span class="bind-dept cert-bold">COMPUTER SCIENCE</span>
+                </p>
+
+                <p class="cert-desc" contenteditable="true">
+                  has successfully and commendably completed the mandatory <strong class="bind-duration">six (6) months</strong> Industrial Training program at <strong style="color: #1b4d89;">EIB STRATOC LIMITED</strong> from <strong class="bind-start">14th April, 2026</strong> to <strong class="bind-end">9th October, 2026</strong>, having demonstrated high technical competence, exemplary discipline, and outstanding dedication.
+                </p>
+              </div>
+
+              <!-- Certificate Footer with Signatures & Stamp -->
+              <div class="cert-signatures">
+                <div class="cert-sig-box">
+                  <div class="cert-sig-img-wrap">
+                    <img src="assets/marquis_signature.png" alt="HR Signature" class="hr-sig-img" id="certSigImg">
+                  </div>
+                  <div class="cert-sig-line"></div>
+                  <p class="cert-sig-person" contenteditable="true"><strong class="bind-hr-name">Marquis</strong></p>
+                  <p class="cert-sig-role" contenteditable="true"><span class="bind-hr-title">Head of Human Resources & Talent</span></p>
+                  <p class="cert-sig-org" contenteditable="true">EIB Stratoc Limited</p>
+                </div>
+
+                <div class="cert-gold-seal">
+                  <div class="seal-circle">
+                    <div class="seal-inner" contenteditable="true">
+                      <span class="seal-star">★</span>
+                      <span class="seal-text">EIB GROUP</span>
+                      <span class="seal-sub">EXCELLENCE</span>
+                      <span class="seal-star">★</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cert-stamp-box">
+                  <div class="cert-stamp-wrap">
+                    <img src="assets/stamp_recreated_marquis.png" alt="Official Stamp" class="official-stamp-img" id="certStampImg">
+                  </div>
+                  <p class="cert-date-text" contenteditable="true">Certified: <span class="bind-today">12th October, 2026</span></p>
+                </div>
+              </div>
+
+              <div class="cert-footer-code" contenteditable="true">
+                <span>CERTIFICATE REF: EIB-SIWES-2026-CERT-042 • VERIFIED INDUSTRY ATTACHMENT</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Assets script with embedded base64 data fallback -->
+  <script src="assets_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
