@@ -147,7 +147,7 @@ def create_completion_letter(output_path, assets_dir):
     p1.add_run(
         ", has successfully completed his mandatory "
     )
-    r_dur = p1.add_run("six (6) months")
+    r_dur = p1.add_run("six (6) months (24 weeks)")
     r_dur.bold = True
     p1.add_run(
         " Students Industrial Work Experience Scheme (SIWES) attachment with "
@@ -317,7 +317,7 @@ def create_evaluation_form(output_path, assets_dir):
         [("Student Full Name:", True), ("[Student Name]", False), ("Matriculation No:", True), ("[Matric No]", False)],
         [("Institution:", True), ("[University / Polytechnic]", False), ("Faculty / School:", True), ("[Faculty of Science/Eng.]", False)],
         [("Department / Course:", True), ("[e.g. Computer Science]", False), ("Level / Year of Study:", True), ("400 Level (Undergraduate)", False)],
-        [("Attachment Period:", True), ("14-Apr-2026 to 09-Oct-2026", False), ("Assigned Division:", True), ("Operations & Technology", False)],
+        [("Attachment Period:", True), ("14-Apr-2026 to 09-Oct-2026 (24 Weeks)", False), ("Assigned Division:", True), ("Operations & Technology", False)],
     ]
     
     for r_idx, row in enumerate(info_data):

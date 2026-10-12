@@ -117,17 +117,36 @@
         <label class="section-label">2. Attachment Parameters</label>
         <div class="form-row">
           <div class="form-group">
-            <label>Attachment Duration</label>
-            <select id="durationInput">
-              <option value="six (6) months">6 Months (Standard SIWES)</option>
-              <option value="three (3) months">3 Months (Short Attachment)</option>
-              <option value="four (4) months">4 Months (Polytechnic ND)</option>
-              <option value="one (1) year">1 Year (Compulsory Post-ND IT)</option>
-            </select>
-          </div>
-          <div class="form-group">
             <label>Reference Code</label>
             <input type="text" id="refNoInput" value="EIB/HR/SIWES/2026/042">
+          </div>
+          <div class="form-group">
+            <label>Assigned Division / Unit</label>
+            <input type="text" id="unitInput" value="Operations & Technical Services Division">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Attachment Duration (Months & Weeks)</label>
+          <div class="duration-controls-grid">
+            <div class="duration-field">
+              <span class="sub-label">Months</span>
+              <input type="number" id="durationMonthsInput" min="0" max="24" value="6" placeholder="Months">
+            </div>
+            <div class="duration-field">
+              <span class="sub-label">Weeks</span>
+              <input type="number" id="durationWeeksInput" min="0" max="104" value="24" placeholder="Weeks">
+            </div>
+          </div>
+          <div class="duration-format-row">
+            <span class="sub-label">Formatted Duration (Custom Editable Text)</span>
+            <input type="text" id="durationInput" value="six (6) months (24 weeks)" placeholder="e.g. six (6) months (24 weeks)">
+          </div>
+          <div class="duration-presets-pills">
+            <button type="button" class="duration-pill active" data-m="6" data-w="24">6 Mon (24 Wks)</button>
+            <button type="button" class="duration-pill" data-m="3" data-w="12">3 Mon (12 Wks)</button>
+            <button type="button" class="duration-pill" data-m="4" data-w="16">4 Mon (16 Wks)</button>
+            <button type="button" class="duration-pill" data-m="12" data-w="52">1 Year (52 Wks)</button>
           </div>
         </div>
         <div class="form-row">
@@ -140,11 +159,8 @@
             <input type="text" id="endDateInput" value="9th October, 2026">
           </div>
         </div>
-        <div class="form-group">
-          <label>Assigned Company Division / Department</label>
-          <input type="text" id="unitInput" value="Operations & Technical Services Division">
-        </div>
       </div>
+
 
       <!-- Performance Evaluation (SIWES Form 8) -->
       <div class="form-section">
@@ -310,7 +326,7 @@
           <!-- Body Content -->
           <div class="letter-body" contenteditable="true">
             <p>
-              This is to formally certify that <strong><span class="bind-name">Oluwaseun Emmanuel Adeyemi</span></strong>, a student of the Department of <strong><span class="bind-dept">Computer Science</span></strong>, <span class="bind-faculty">Faculty of Science</span>, <strong><span class="bind-inst">University of Lagos (UNILAG)</span></strong>, with Matriculation Number <strong><span class="bind-matric">190407028</span></strong>, has successfully completed his mandatory <strong><span class="bind-duration">six (6) months</span></strong> Students Industrial Work Experience Scheme (SIWES) internship attachment with <strong>EIB STRATOC LIMITED</strong>, from <strong><span class="bind-start">14th April, 2026</span></strong> to <strong><span class="bind-end">9th October, 2026</span></strong>.
+              This is to formally certify that <strong><span class="bind-name">Oluwaseun Emmanuel Adeyemi</span></strong>, a student of the Department of <strong><span class="bind-dept">Computer Science</span></strong>, <span class="bind-faculty">Faculty of Science</span>, <strong><span class="bind-inst">University of Lagos (UNILAG)</span></strong>, with Matriculation Number <strong><span class="bind-matric">190407028</span></strong>, has successfully completed his mandatory <strong><span class="bind-duration">six (6) months (24 weeks)</span></strong> Students Industrial Work Experience Scheme (SIWES) internship attachment with <strong>EIB STRATOC LIMITED</strong>, from <strong><span class="bind-start">14th April, 2026</span></strong> to <strong><span class="bind-end">9th October, 2026</span></strong>.
             </p>
 
             <p>
@@ -403,7 +419,7 @@
               </tr>
               <tr>
                 <td class="lbl" contenteditable="true">Attachment Duration:</td>
-                <td class="val" contenteditable="true"><span class="bind-duration">six (6) months</span> (<span class="bind-start">14th Apr 2026</span> to <span class="bind-end">9th Oct 2026</span>)</td>
+                <td class="val" contenteditable="true"><span class="bind-duration">six (6) months (24 weeks)</span> (<span class="bind-start">14th Apr 2026</span> to <span class="bind-end">9th Oct 2026</span>)</td>
                 <td class="lbl" contenteditable="true">Assigned Division:</td>
                 <td class="val bind-unit" contenteditable="true">Operations & Technical Services Division</td>
               </tr>
@@ -569,7 +585,7 @@
                 </p>
 
                 <p class="cert-desc" contenteditable="true">
-                  has successfully and commendably completed the mandatory <strong class="bind-duration">six (6) months</strong> Industrial Training program at <strong style="color: #1b4d89;">EIB STRATOC LIMITED</strong> from <strong class="bind-start">14th April, 2026</strong> to <strong class="bind-end">9th October, 2026</strong>, having demonstrated high technical competence, exemplary discipline, and outstanding dedication.
+                  has successfully and commendably completed the mandatory <strong class="bind-duration">six (6) months (24 weeks)</strong> Industrial Training program at <strong style="color: #1b4d89;">EIB STRATOC LIMITED</strong> from <strong class="bind-start">14th April, 2026</strong> to <strong class="bind-end">9th October, 2026</strong>, having demonstrated high technical competence, exemplary discipline, and outstanding dedication.
                 </p>
               </div>
 

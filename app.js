@@ -18,7 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const institutionInput = document.getElementById('institutionInput');
   const facultyInput = document.getElementById('facultyInput');
   const departmentInput = document.getElementById('departmentInput');
+  
+  // Duration Inputs (Months, Weeks, and Formatted Custom Text)
+  const durationMonthsInput = document.getElementById('durationMonthsInput');
+  const durationWeeksInput = document.getElementById('durationWeeksInput');
   const durationInput = document.getElementById('durationInput');
+  const durationPills = document.querySelectorAll('.duration-pill');
+
   const refNoInput = document.getElementById('refNoInput');
   const startDateInput = document.getElementById('startDateInput');
   const endDateInput = document.getElementById('endDateInput');
@@ -56,6 +62,46 @@ document.addEventListener('DOMContentLoaded', () => {
       return ASSETS[filename];
     }
     return `assets/${filename}`;
+  }
+
+  // Number to formal English words mapping for months
+  const numWords = {
+    1: 'one (1)', 2: 'two (2)', 3: 'three (3)', 4: 'four (4)',
+    5: 'five (5)', 6: 'six (6)', 7: 'seven (7)', 8: 'eight (8)',
+    9: 'nine (9)', 10: 'ten (10)', 11: 'eleven (11)', 12: 'twelve (12)'
+  };
+
+  function formatDurationText(months, weeks) {
+    const m = parseInt(months, 10);
+    const w = parseInt(weeks, 10);
+
+    const hasM = !isNaN(m) && m > 0;
+    const hasW = !isNaN(w) && w > 0;
+
+    let mPart = '';
+    let wPart = '';
+
+    if (hasM) {
+      if (m === 12) {
+        mPart = 'one (1) year';
+      } else {
+        const mWord = numWords[m] || `${m}`;
+        mPart = `${mWord} month${m > 1 ? 's' : ''}`;
+      }
+    }
+
+    if (hasW) {
+      wPart = `(${w} week${w > 1 ? 's' : ''})`;
+    }
+
+    if (hasM && hasW) {
+      return `${mPart} ${wPart}`;
+    } else if (hasM) {
+      return mPart;
+    } else if (hasW) {
+      return `${w} week${w > 1 ? 's' : ''}`;
+    }
+    return 'six (6) months (24 weeks)';
   }
 
   // 1. TAB SWITCHING
@@ -115,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inst = institutionInput.value.trim() || '[Institution Name]';
     const faculty = facultyInput.value.trim() || '[Faculty]';
     const dept = departmentInput.value.trim() || '[Department]';
-    const duration = durationInput.value;
+    const duration = durationInput.value.trim() || 'six (6) months (24 weeks)';
     const ref = refNoInput.value.trim() || 'EIB/HR/SIWES/2026/042';
     const start = startDateInput.value.trim() || '14th April, 2026';
     const end = endDateInput.value.trim() || '9th October, 2026';
@@ -151,7 +197,52 @@ document.addEventListener('DOMContentLoaded', () => {
     isInternalSync = false;
   }
 
-  // Attach input listeners for sidebar inputs
+  // 5B. DURATION CONTROLS HANDLING
+  if (durationMonthsInput) {
+    durationMonthsInput.addEventListener('input', () => {
+      const m = parseInt(durationMonthsInput.value, 10);
+      if (!isNaN(m) && m > 0) {
+        // Auto-compute weeks if appropriate (4 weeks per month)
+        const computedWeeks = m * 4;
+        if (durationWeeksInput) {
+          durationWeeksInput.value = computedWeeks;
+        }
+        durationInput.value = formatDurationText(m, computedWeeks);
+      } else {
+        durationInput.value = formatDurationText(0, durationWeeksInput ? durationWeeksInput.value : 0);
+      }
+      updateAllBindings(durationInput);
+    });
+  }
+
+  if (durationWeeksInput) {
+    durationWeeksInput.addEventListener('input', () => {
+      const w = parseInt(durationWeeksInput.value, 10);
+      const m = durationMonthsInput ? parseInt(durationMonthsInput.value, 10) : 0;
+      durationInput.value = formatDurationText(m, w);
+      updateAllBindings(durationInput);
+    });
+  }
+
+  if (durationPills) {
+    durationPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        durationPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const m = pill.dataset.m;
+        const w = pill.dataset.w;
+
+        if (durationMonthsInput) durationMonthsInput.value = m;
+        if (durationWeeksInput) durationWeeksInput.value = w;
+        durationInput.value = formatDurationText(m, w);
+
+        updateAllBindings(durationInput);
+      });
+    });
+  }
+
+  // Attach input listeners for other sidebar inputs
   const inputsToListen = [
     studentNameInput, matricNoInput, levelInput, institutionInput, facultyInput,
     departmentInput, durationInput, refNoInput, startDateInput, endDateInput,
@@ -184,6 +275,9 @@ document.addEventListener('DOMContentLoaded', () => {
         updateAllBindings(target);
       } else if (target.classList.contains('bind-faculty')) {
         facultyInput.value = text;
+        updateAllBindings(target);
+      } else if (target.classList.contains('bind-duration')) {
+        durationInput.value = text;
         updateAllBindings(target);
       } else if (target.classList.contains('bind-ref')) {
         refNoInput.value = text;
@@ -405,7 +499,9 @@ document.addEventListener('DOMContentLoaded', () => {
       inst: 'University of Lagos (UNILAG)',
       faculty: 'Faculty of Science',
       dept: 'Computer Science',
-      duration: 'six (6) months',
+      duration: 'six (6) months (24 weeks)',
+      months: 6,
+      weeks: 24,
       start: '14th April, 2026',
       end: '9th October, 2026',
       unit: 'Operations & Technical Services Division',
@@ -419,7 +515,9 @@ document.addEventListener('DOMContentLoaded', () => {
       inst: 'Federal University of Technology Owerri (FUTO)',
       faculty: 'School of Engineering & Engineering Tech',
       dept: 'Electrical & Electronics Engineering',
-      duration: 'six (6) months',
+      duration: 'six (6) months (24 weeks)',
+      months: 6,
+      weeks: 24,
       start: '4th May, 2026',
       end: '30th October, 2026',
       unit: 'Field Systems & Telecommunications Unit',
@@ -433,7 +531,9 @@ document.addEventListener('DOMContentLoaded', () => {
       inst: 'Covenant University, Ota',
       faculty: 'College of Management & Social Sciences',
       dept: 'Business Administration & Logistics',
-      duration: 'three (3) months',
+      duration: 'three (3) months (12 weeks)',
+      months: 3,
+      weeks: 12,
       start: '1st June, 2026',
       end: '28th August, 2026',
       unit: 'Corporate Strategy & Logistics Coordination',
@@ -453,7 +553,11 @@ document.addEventListener('DOMContentLoaded', () => {
       institutionInput.value = p.inst;
       facultyInput.value = p.faculty;
       departmentInput.value = p.dept;
+      
+      if (durationMonthsInput) durationMonthsInput.value = p.months;
+      if (durationWeeksInput) durationWeeksInput.value = p.weeks;
       durationInput.value = p.duration;
+
       startDateInput.value = p.start;
       endDateInput.value = p.end;
       unitInput.value = p.unit;

@@ -317,7 +317,66 @@ body {
   gap: 10px;
 }
 
+.sub-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.duration-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.duration-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.duration-format-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+
+.duration-presets-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.duration-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.duration-pill:hover {
+  background: rgba(37, 102, 168, 0.3);
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.duration-pill.active {
+  background: #1b4d89;
+  border-color: #60a5fa;
+  color: #ffffff;
+}
+
 input[type="text"],
+
 input[type="number"],
 select {
   width: 100%;
